@@ -10,7 +10,7 @@ export class AppComponent {
     {
       label: "Unrealized Gain ($)",
       data: [1000, 700, 300, 900, 400, 1000]
-    }
+    },
     {
       label: "Increased Cost Basis ($)",
       data: [400, 500, 400, 100, 100, 700]
