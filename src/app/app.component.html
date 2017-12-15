@@ -21,10 +21,10 @@
         <div class="col-md-12">
           <table class="table table-responsive table-condensed">
             <tr>
-              <th *ngFor="let label of labels">{{ label }}</th>
+              <th *ngFor="let label of labels1">{{ label }}</th>
             </tr>
-            <tr *ngFor="let d of datasets">
-              <td *ngFor="let label of labels; let j=index">{{ d && d.data[j] }}</td>
+            <tr *ngFor="let d of datasets1">
+              <td *ngFor="let label of labels1; let j=index">{{ d && d.data[j] }}</td>
             </tr>
           </table>
         </div>
