@@ -1,0 +1,12 @@
+.tile {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  flex: 1 1;
+}
+
+.chart {
+  width:95%;
+}
