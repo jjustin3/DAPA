@@ -91,7 +91,6 @@ export const AllOptions = {
       x: function(d){return d.key;},
       y: function(d){return d.y;},
       showLabels: false,
-      duration: 500,
       labelThreshold: 0.01,
       labelSunbeamLayout: true,
       duration: 1000,
