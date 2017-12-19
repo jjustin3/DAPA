@@ -42,6 +42,7 @@ export const AllOptions = {
         tooltipShow: function(e){ console.log("tooltipShow"); },
         tooltipHide: function(e){ console.log("tooltipHide"); }
       },
+      duration: 1000,
       xAxis: {
         axisLabel: '# Days'
       },
@@ -73,7 +74,7 @@ export const AllOptions = {
       valueFormat: function(d){
         return '$' + d3.format(',.2f')(d);
       },
-      duration: 500,
+      duration: 1000,
       xAxis: {
         axisLabel: 'Month'
       },
@@ -93,6 +94,7 @@ export const AllOptions = {
       duration: 500,
       labelThreshold: 0.01,
       labelSunbeamLayout: true,
+      duration: 1000,
       legend: {
         margin: {
           top: 5,
