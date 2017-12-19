@@ -1,6 +1,8 @@
 //
 // Options and Data definitions
 //
+import 'd3';
+import 'nvd3';
 declare let d3, nv: any;
 
 export const ChartTypes = [
