@@ -41,17 +41,17 @@ export const AllOptions = {
         tooltipHide: function(e){ console.log("tooltipHide"); }
       },
       xAxis: {
-        axisLabel: 'Time (ms)'
+        axisLabel: '# Days'
       },
       yAxis: {
-        axisLabel: 'Voltage (v)',
+        axisLabel: 'Return (%)',
         tickFormat: function(d){
           return d3.format('.02f')(d);
         },
         axisLabelDistance: -10
       },
       callback: function(chart){
-        console.log("!!! lineChart callback !!!");
+
       }
     }
   },
@@ -955,17 +955,17 @@ function sinAndCos() {
   return [
     {
       values: sin,      //values - represents the array of {x,y} data points
-      key: 'Sine Wave', //key  - the name of the series.
+      key: 'Bitcoin (BTC)', //key  - the name of the series.
       color: '#ff7f0e'  //color - optional: choose your own line color.
     },
     {
       values: cos,
-      key: 'Cosine Wave',
+      key: 'Ethereum (ETH)',
       color: '#2ca02c'
     },
     {
       values: sin2,
-      key: 'Another sine wave',
+      key: 'Litecoin (LTC)',
       color: '#7777ff',
       area: true      //area - set to true if you want this line to turn into a filled area chart.
     }
