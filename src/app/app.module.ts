@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { TileModule } from './tile/tile.module';
+import { NavigationModule } from './navigation/navigation.module';
 
 import { AppComponent } from './app.component';
 
@@ -10,7 +11,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    TileModule
+    TileModule,
+    NavigationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

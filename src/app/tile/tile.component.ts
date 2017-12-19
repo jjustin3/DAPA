@@ -27,7 +27,7 @@ export class TileComponent implements OnInit {
         y: function(d){return d.value;},
         showValues: true,
         valueFormat: function(d){
-          return d3.format(',.2f')(d);
+          return '$' + d3.format(',.2f')(d);
         },
         duration: 500,
         xAxis: {
