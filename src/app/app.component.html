@@ -1,10 +1,15 @@
 <div>
   <app-navigation></app-navigation>
-  <div class="tile-list row">
-    <app-tile [title]="'Increased Cost Basis'" [chartType]="'discreteBarChart'" class="col"></app-tile>
-    <app-tile [title]="'Category'" [chartType]="'pieChart'" class="col"></app-tile>
-  </div>
-  <div class="tile-list row">
-    <app-tile [title]="'100 Day Returns'" [chartType]="'lineChart'" class="col"></app-tile>
+  <div class="content">
+    <div class="tile-list row">
+      <app-tile [title]="'Increased Cost Basis'" [chartType]="'discreteBarChart'" class="app-tile col"></app-tile>
+      <app-tile [title]="'Equity Distribution'" [chartType]="'pieChart'" class="app-tile col"></app-tile>
+    </div>
+    <div class="tile-list row">
+      <app-tile [title]="'100 Day Returns'" [chartType]="'lineChart'" class="app-tile col"></app-tile>
+    </div>
+    <div class="tile-list row">
+      <app-tile [title]="'100 Day Unrealized Gains'" [chartType]="'multiBarChart'" class="app-tile col"></app-tile>
+    </div>
   </div>
 </div>

@@ -1,7 +1,21 @@
+.content {
+  margin-top: 15px;
+}
+
 .tile-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 20px auto;
+  margin: 0 auto;
+}
+
+.app-tile {
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 500px) {
+  .app-tile {
+    margin-bottom: 0;
+  }
 }

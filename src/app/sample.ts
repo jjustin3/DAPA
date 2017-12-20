@@ -35,6 +35,9 @@ export const AllOptions = {
       },
       x: function(d){ return d.x; },
       y: function(d){ return d.y; },
+      valueFormat: function(d){
+        return d3.format(',.2f')(d);
+      },
       useInteractiveGuideline: true,
       dispatch: {
         stateChange: function(e){ console.log("stateChange"); },
@@ -90,6 +93,9 @@ export const AllOptions = {
       height: 500,
       x: function(d){return d.key;},
       y: function(d){return d.y;},
+      valueFormat: function(d){
+        return d3.format(',f')(d) + '%';
+      },
       showLabels: false,
       labelThreshold: 0.01,
       labelSunbeamLayout: true,
@@ -138,24 +144,27 @@ export const AllOptions = {
         top: 20,
         right: 20,
         bottom: 45,
-        left: 45
+        left: 60
       },
       clipEdge: true,
       //staggerLabels: true,
-      duration: 500,
+      valueFormat: function(d){
+        return '$' + d3.format(',.2f')(d);
+      },
+      duration: 1000,
       stacked: true,
       xAxis: {
-        axisLabel: 'Time (ms)',
-        showMaxMin: false,
+        axisLabel: '# Days',
+        showMaxMin: true,
         tickFormat: function(d){
           return d3.format(',f')(d);
         }
       },
       yAxis: {
-        axisLabel: 'Y Axis',
-        axisLabelDistance: -20,
+        axisLabel: 'Amount ($)',
+        axisLabelDistance: 0,
         tickFormat: function(d){
-          return d3.format(',.1f')(d);
+          return d3.format(',.2f')(d);
         }
       }
     }
@@ -396,32 +405,16 @@ export const AllData = {
   ],
   pieChart: [
     {
-      key: "One",
-      y: 5
+      key: "Bitcoin (BTC)",
+      y: 60
     },
     {
-      key: "Two",
-      y: 2
+      key: "Ethereum (ETH)",
+      y: 30
     },
     {
-      key: "Three",
-      y: 9
-    },
-    {
-      key: "Four",
-      y: 7
-    },
-    {
-      key: "Five",
-      y: 4
-    },
-    {
-      key: "Six",
-      y: 3
-    },
-    {
-      key: "Seven",
-      y: .5
+      key: "Litecoin (LTC)",
+      y: 10
     }
   ],
   scatterChart: generateDataScatter(4,40),
@@ -650,9 +643,10 @@ function generateDataScatter(groups, points) {
 // MultiBarChart
 /* Random Data Generator (took from nvd3.org) */
 function generateDataMultiBar() {
-  return stream_layers(3,50+Math.random()*50,.1).map(function(data, i) {
+  var coins = ['Litecoin (LTC)', 'Ethereum (ETH)', 'Bitcoin (BTC)'];
+  return stream_layers(3,100,.1).map(function(data, i) {
     return {
-      key: 'Stream' + i,
+      key: coins[i],
       values: data
     };
   });
@@ -662,9 +656,9 @@ function generateDataMultiBar() {
 function stream_layers(n, m, o) {
   if (arguments.length < 3) o = 0;
   function bump(a) {
-    var x = 1 / (.1 + Math.random()),
+    var x = 1 / (.3 + Math.random()),
       y = 2 * Math.random() - .5,
-      z = 10 / (.1 + Math.random());
+      z = 10 / (.3 + Math.random());
     for (var i = 0; i < m; i++) {
       var w = (i / m - y) * z;
       a[i] += x * Math.exp(-w * w);
@@ -672,7 +666,7 @@ function stream_layers(n, m, o) {
   }
   return d3.range(n).map(function() {
     var a = [], i;
-    for (i = 0; i < m; i++) a[i] = o + o * Math.random();
+    for (i = 0; i < m; i++) a[i] = (o + o * Math.random()) + Math.random() * 120;
     for (i = 0; i < 5; i++) bump(a);
     return a.map(stream_index);
   });
