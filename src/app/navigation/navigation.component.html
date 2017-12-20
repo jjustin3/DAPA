@@ -1,8 +1,17 @@
 <nav class="navbar navbar-light bg-faded" style="background-color: #99ccff;">
-  <span class="navbar-brand">{{ title }}</span>
+  <span class="navbar-brand title">{{ title }}</span>
     <ul class="nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Tools
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Generate Report</a>
+          <a class="dropdown-item" href="#">Schedule Report</a>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">About</a>
